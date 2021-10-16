@@ -4,16 +4,20 @@ import models.ProjectDetails;
 import models.ProjectDetailsFactory;
 import org.testng.annotations.Test;
 import pages.LoginPage;
+import pages.ProjectDetailsPage;
 
 public class CaseTest extends BaseTest{
-    ProjectDetails projectDetails;
-    @Test
-    public void testCaseShouldBeCreated(){
+
+    @Test(description= "Filling all fields in test case")
+    public void testCaseShouldBeCreated() {
         new LoginPage()
                 .open()
-                .login()
-                .openProject()
-                .selectingDropDownFields(projectDetails= ProjectDetailsFactory.get());
+                .login("kuznikit@gmail.com", "Qazxcv123")
+                .openProject("qwe");
+        ProjectDetails projectDetails = ProjectDetailsFactory.getData();
+        new ProjectDetailsPage()
+                .selectingDropDownFields(projectDetails);
+
         //open project by name ABC
         //create case
         //validate info

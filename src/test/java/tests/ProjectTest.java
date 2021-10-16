@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 
 public class ProjectTest extends BaseTest{
-    @Test
+    @Test(description = "Create new project with name qwe")
     public void projectShouldBeCreated(){
         new LoginPage()
                 .open()
