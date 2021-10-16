@@ -14,6 +14,8 @@
         <slf4j-nop.version>1.7.13</slf4j-nop.version>
         <suiteXmlFile>src/test/resources/SmokeTest.xml</suiteXmlFile>
         <aspectjweaver>1.9.6</aspectjweaver>
+        <bonigarcia.version>5.0.1</bonigarcia.version>
+        <allure>2.13.9</allure>
     </properties>
     <build>
         <plugins>
@@ -58,11 +60,22 @@
             <artifactId>slf4j-nop</artifactId>
             <version>${slf4j-nop.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-testng</artifactId>
-            <version>2.13.9</version>
+            <version>${allure}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectjweaver}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${bonigarcia.version}</version>
         </dependency>
     </dependencies>
 </project>
