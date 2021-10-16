@@ -8,7 +8,7 @@ public class ProjectTest extends BaseTest{
     public void projectShouldBeCreated(){
         new LoginPage()
                 .open()
-                .login("kuznikit@gmail.com","Qazxcv123")
+                .login(user,password)
                 .create("qwe","12","qwe","Public", "Add members from specific group");
 
     }
