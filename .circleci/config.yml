@@ -2,9 +2,7 @@
 #
 # Check https://circleci.com/docs/2.0/language-java/ for more details
 # https://circleci.com/docs/2.0/browser-testing/#selenium
-version: 2.1
-orbs:
-  browser-tools: circleci/browser-tools@1.2.3
+version: 2
 jobs:
   ui-tests:
     docker:
@@ -32,7 +30,7 @@ jobs:
           when: always
       - store_test_results:
           path: target/surefire-reports/junitreports
-          when: always
+          #when: always
       - store_artifacts:
           path: target/site/allure-maven-plugin/
 workflows:
